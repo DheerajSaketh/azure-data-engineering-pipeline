@@ -1,0 +1,23 @@
+{
+  "name": "SamplePipeline",
+  "properties": {
+    "activities": [
+      {
+        "name": "CopyFromRawToProcessed",
+        "type": "Copy",
+        "inputs": [
+          {
+            "referenceName": "RawDataset",
+            "type": "DatasetReference"
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "ProcessedDataset",
+            "type": "DatasetReference"
+          }
+        ]
+      }
+    ]
+  }
+}
