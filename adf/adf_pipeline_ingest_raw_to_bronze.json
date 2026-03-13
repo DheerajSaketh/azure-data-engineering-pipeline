@@ -1,0 +1,32 @@
+{
+  "name": "Ingest_Raw_To_Bronze",
+  "properties": {
+    "activities": [
+      {
+        "name": "CopyRawToBronze",
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "DelimitedTextSource",
+            "recursive": false
+          },
+          "sink": {
+            "type": "ParquetSink"
+          }
+        },
+        "inputs": [
+          {
+            "referenceName": "Raw_CSV_Dataset",
+            "type": "DatasetReference"
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "Bronze_Parquet_Dataset",
+            "type": "DatasetReference"
+          }
+        ]
+      }
+    ]
+  }
+}
