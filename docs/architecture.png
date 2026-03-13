@@ -1,0 +1,2 @@
+[Architecture Diagram Placeholder]
+ADF → ADLS (Bronze) → Databricks → ADLS (Silver/Gold) → Synapse → Power BI
