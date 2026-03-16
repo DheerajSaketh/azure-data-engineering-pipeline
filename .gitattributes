@@ -1,0 +1,6 @@
+# GitHub Linguist language detection overrides
+*.json linguist-language=JSON
+*.sql linguist-language=SQL
+*.md linguist-language=Markdown
+*.py linguist-language=Python
+*.ipynb linguist-language=Jupyter Notebook
