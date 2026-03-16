@@ -1,7 +1,8 @@
-CREATE TABLE gold.customer_summary AS
-SELECT
-    customer_id,
-    COUNT(*) AS total_orders,
-    SUM(order_amount) AS total_spent
-FROM silver.orders
-GROUP BY customer_id;
+CREATE EXTERNAL TABLE gold.customer_summary
+(
+    age_group STRING,
+    total_customers BIGINT,
+    total_age BIGINT
+)
+USING DELTA
+LOCATION 'abfss://gold@<storage_account>.dfs.core.windows.net/customer_summary';

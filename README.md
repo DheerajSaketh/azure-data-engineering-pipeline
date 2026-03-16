@@ -15,12 +15,21 @@ This project demonstrates an end-to-end data engineering pipeline on **Microsoft
 3. **Serving:** Curated data is loaded into Synapse for analytics and reporting.
 4. **Visualization:** Power BI dashboards consume Synapse data for business insights.
 
-## 🛠 Tech Stack
+## � Getting Started
 
-- **Languages:** Python, SQL, PySpark  
-- **Azure Services:** ADF, Databricks, ADLS, Synapse, Key Vault  
-- **Other:** Git, Azure DevOps (for CI/CD)
+1. Clone the repository.
+2. Install dependencies: `pip install -r requirements.txt`
+3. Test locally: `python scripts/local_test.py`
+4. Deploy to Azure using ARM templates in `deploy/`.
+5. Configure Azure services and run the pipeline.
 
-## 🚧 Status
+## 📁 Project Structure
 
-This project is a **work in progress**. Code, notebooks, and pipeline definitions will be added soon.
+- `adf/`: Azure Data Factory pipeline definitions
+- `data/`: Sample data files
+- `deploy/`: ARM templates for deployment
+- `docs/`: Architecture diagrams and documentation
+- `notebooks/`: Databricks PySpark notebooks
+- `powerbi/`: Power BI dataset definitions
+- `scripts/`: Local testing scripts
+- `synapse/`: Synapse SQL scripts
