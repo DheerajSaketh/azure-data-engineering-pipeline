@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run local test
+      run: python scripts/local_test.py
+
+    - name: Validate JSON files
+      run: |
+        for file in adf/*.json; do
+          echo "Validating $file"
+          python -m json.tool "$file" > /dev/null
+        done
+
+    - name: Check SQL syntax
+      run: |
+        # Basic check for SQL files
+        for file in synapse/*.sql; do
+          echo "Checking $file"
+          # Could add sqlfluff or similar if installed
+        done

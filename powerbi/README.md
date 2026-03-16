@@ -5,10 +5,10 @@ This folder contains Power BI assets for the Azure Data Engineering Pipeline pro
 ## 📊 Dashboard Overview
 The dashboard visualizes:
 
-- Customer age distribution  
-- Total customers by age group  
-- Total spending metrics  
-- Data quality checks  
+- Customer age distribution
+- Total customers by age group
+- Total spending metrics
+- Data quality checks
 - Pipeline run status (optional)
 
 ## 📁 Files to Upload Later
@@ -24,3 +24,14 @@ The dashboard visualizes:
    - KPI: Total customers
    - KPI: Total age sum
 4. Save the report as `.pbix` and upload it here.
+
+## Dataset Definition
+The `dataset_definition.json` provides the schema for connecting to Synapse.
+
+## Best Practices
+
+- Use DirectQuery for real-time data
+- Implement row-level security
+- Create shared datasets for consistency
+- Use Power BI dataflows for additional transformations
+- Publish to Power BI Service for sharing

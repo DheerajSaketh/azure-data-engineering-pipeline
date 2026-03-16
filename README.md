@@ -10,10 +10,31 @@ This project demonstrates an end-to-end data engineering pipeline on **Microsoft
 
 ## 🧱 Architecture
 
-1. **Ingestion:** Raw data is ingested into ADLS (Bronze layer) using ADF.
-2. **Transformation:** Databricks notebooks clean and transform data into Silver and Gold layers.
-3. **Serving:** Curated data is loaded into Synapse for analytics and reporting.
-4. **Visualization:** Power BI dashboards consume Synapse data for business insights.
+```
+Raw Data Sources
+       ↓
+Azure Data Factory (Ingestion)
+       ↓
+Azure Data Lake Storage - Bronze Layer
+       ↓
+Azure Databricks (Transformation)
+       ↓
+Azure Data Lake Storage - Silver & Gold Layers
+       ↓
+Azure Synapse Analytics (Serving)
+       ↓
+Power BI (Visualization)
+```
+
+**Medallion Architecture:**
+- **Bronze Layer**: Raw, unprocessed data
+- **Silver Layer**: Cleaned, validated data
+- **Gold Layer**: Aggregated, business-ready data
+
+### Data Flow Diagram
+```
+[External Sources] → [ADF Pipeline] → [ADLS Bronze] → [Databricks Jobs] → [ADLS Silver/Gold] → [Synapse External Tables] → [Power BI Reports]
+```
 
 ## 🎯 Real-World Use Cases
 
